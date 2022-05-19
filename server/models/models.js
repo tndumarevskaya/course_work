@@ -18,7 +18,7 @@ const FavouriteEvent = sequelize.define('favourite_event', {
 const Event = sequelize.define('event', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, allowNull: false},
-    data: {type: DataTypes.DATE, allowNull: false},
+    data: {type: DataTypes.STRING, allowNull: false},
     isFree: {type: DataTypes.BOOLEAN},
     isOnline: {type: DataTypes.BOOLEAN},
     price: {type: DataTypes.INTEGER},
