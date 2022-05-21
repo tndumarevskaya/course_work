@@ -215,7 +215,7 @@ hr {
 	padding: 0 42px;
 	box-shadow: 6px 6px 25px 0px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
-	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/exhibition.jpg);
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../server/images/exhibition.jpg);
 	background-size: cover;
 	background-position: center;
 }

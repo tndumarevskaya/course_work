@@ -1,0 +1,13 @@
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: normal;
+	display: grid;
+	grid-template-areas: 
+					'header'
+					'search'
+					'filters-first-line'
+					'filters-second-line'
+					'events';
+	margin: 0;
+}
