@@ -7,6 +7,8 @@ const fileUpload = require('express-fileupload');
 const router = require('./routes/index');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 const path = require('path');
+const parser = require('./parser');
+
 
 const PORT = process.env.PORT || 5000
 
@@ -16,6 +18,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'images')));
 app.use(fileUpload({}));
 app.use('/api', router);
+parser();
 
 app.use(errorHandler);
 

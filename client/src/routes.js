@@ -1,7 +1,7 @@
 import Authorization from "./pages/Authorization"
 import FavouritePage from "./pages/FavouritePage"
 import MainPage from "./pages/MainPage"
-import { FAVOURITE_ROUTE, LOGIN_ROUTE, MAINPAGE_ROUTE, REGISTRATION_ROUTE, USER_ROUTE } from "./utils/consts"
+import { FAVOURITE_ROUTE, LOGIN_ROUTE, MAINPAGE_ROUTE, REGISTRATION_ROUTE} from "./utils/consts"
 
 export const authorizationRoutes = [
     {

@@ -3,8 +3,15 @@ import {makeAutoObservable} from "mobx";
 export default class EventStore {
     constructor() {
         this._types = [
-            {id: 1, name: 'Выставка'},
-            {id: 2, name: 'Концерт'}
+            {id: 1, name: 'Выставки'},
+            {id: 2, name: 'Концерты'},
+            {id: 3, name: 'Обучение'},
+            {id: 4, name: 'Праздники'},
+            {id: 5, name: 'Спектакли'},
+            {id: 6, name: 'Фестивали'},
+            {id: 7, name: 'Экскурсии'},
+            {id: 8, name: 'Кино'},
+            {id: 9, name: 'Прочие'}
         ]
         this._places = [
             {id: 1, name: 'Музей'},
@@ -34,6 +41,9 @@ export default class EventStore {
                 placeId: 2
             }
         ]
+
+        this._selectedType = {};
+        this._selectedPlace = {};
         makeAutoObservable(this);
     }
 
@@ -49,6 +59,15 @@ export default class EventStore {
         this._events = events;
     }
 
+    setSelectedType(type) {
+        this._selectedType = type;
+    }
+
+    
+    setSelectedPlace(place) {
+        this._selectedPlace = place;
+    }
+
     get types() {
         return this._types;
     }
@@ -59,5 +78,13 @@ export default class EventStore {
     
     get events() {
         return this._events;
+    }
+
+    get selectedType() {
+        return this._selectedType;
+    }
+
+    get selectedPlace() {
+        return this._selectedPlace;
     }
 }

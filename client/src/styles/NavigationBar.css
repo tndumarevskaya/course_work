@@ -6,14 +6,12 @@
 	justify-content: end;
 	grid-template-columns: 40px auto 100px;
 	align-items: center;
-	grid-gap: 30px;
-	margin-bottom: 40px;
+	grid-gap: 10px;
 	background-color: #351431;
     height: 80px;
 }
 
-
-.favourite {
+.favourite, .account {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -27,7 +25,11 @@
 .title {
 	font-family: 'Nunito', sans-serif;
     color: white;
-	font-weight: ;
+    font-size: 26px;
+}
+
+.title:hover {
+	color: #FA8334;
 }
 
 svg {
@@ -35,4 +37,10 @@ svg {
 	align-self: center;
 	height: 24px;
     width: 24px;
+}
+
+.favourite:hover, .favourite-search:focus, .account:hover, .account:focus {
+	background: #FA8334;
+	color: white;
+	box-shadow: none !important;
 }

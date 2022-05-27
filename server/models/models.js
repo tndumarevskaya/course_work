@@ -21,7 +21,7 @@ const Event = sequelize.define('event', {
     data: {type: DataTypes.STRING, allowNull: false},
     isFree: {type: DataTypes.BOOLEAN},
     isOnline: {type: DataTypes.BOOLEAN},
-    price: {type: DataTypes.INTEGER},
+    price: {type: DataTypes.STRING},
     img: {type: DataTypes.STRING, allowNull: false}
 })
 
