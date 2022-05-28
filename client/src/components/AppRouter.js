@@ -3,8 +3,9 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import { authorizationRoutes, publicRoutes } from '../routes';
 import { Context } from '../index';
 import { MAINPAGE_ROUTE } from '../utils/consts';
+import { observer } from 'mobx-react-lite';
 
-const AppRouter = () => {
+const AppRouter = observer (() => {
     const {user} = useContext(Context);
 
     return (
@@ -18,6 +19,6 @@ const AppRouter = () => {
             <Route path="*" element={<Navigate replace to={MAINPAGE_ROUTE}/>}/>
         </Routes>
     );
-};
+})
 
 export default AppRouter;

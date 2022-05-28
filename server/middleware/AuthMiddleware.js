@@ -6,13 +6,13 @@ module.exports = function (req, res, next) {
     }
     try {
         const jsonWebToken = req.headers.authorization.split(' ')[1];
-        if (!token) {
+        if (!jsonWebToken) {
             res.status(403).json({message: "You are not authorized"});
         }
-        const decoder = jws.verify(jsonWebToken, process.env.SECRET_TOKEN);
-        req.user = decoder;
+        const decoded = jwt.verify(jsonWebToken, process.env.SECRET_TOKEN);
+        req.user = decoded;
         next();
     } catch (e) {
-        res.status(403).json({message: "You are not authorized"});
+        res.status(401).json({message: "You are not authorized"});
     }
 }

@@ -3,6 +3,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const {User, Favourite} = require('../models/models');
 
+const generateJwt = (id, email) => {
+    return jwt.sign(
+        {id, email},
+        process.env.SECRET_TOKEN,
+        {expiresIn: '24h'}
+    )
+}
+
 class UserController {
     async registration(req, res, next) {
         var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
@@ -17,7 +25,7 @@ class UserController {
         const hashPassword = await bcrypt.hash(password, 4);
         const user = await User.create({email, password: hashPassword});
         const favourite = await Favourite.create({userId: user.id});
-        const jsonWebToken = jwt.sign({id: user.id, email: user.email}, process.env.SECRET_TOKEN, {expiresIn: '24h'});
+        const jsonWebToken = generateJwt(user.id, user.email, user.role);
 
         return res.json({jsonWebToken});
     }
@@ -32,13 +40,12 @@ class UserController {
         if (!isValidPassword) {
             return next(ApiError.badRequest("Incorrect password"));
         }
-        const jsonWebToken = jwt.sign({id: user.id, email: user.email}, process.env.SECRET_TOKEN, {expiresIn: '24h'});
-
+        const jsonWebToken = generateJwt(user.id, user.email, user.role);
         return res.json({jsonWebToken});
     }
 
     async authorization(req, res, next) {
-        const jsonWebToken = generateJws(req.user.id, req.user.email);
+        const jsonWebToken = generateJwt(req.user.id, req.user.email);
         return res.json({jsonWebToken});
     }
 

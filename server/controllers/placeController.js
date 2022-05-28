@@ -12,6 +12,14 @@ class placeController {
         const places = await Place.findAll();
         return res.json(places);
     }
+
+    async getOne(req, res) {
+        const {id} = req.params;
+        const place = await Place.findOne({
+            where: {id}, 
+        })
+        return res.json(event);
+    }
 }
 
 module.exports = new placeController();

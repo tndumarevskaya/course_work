@@ -1,0 +1,76 @@
+.event-wrapper {
+	display: grid;
+	grid-template-rows:auto 1fr auto;
+	height: 360px;
+	padding: 0 42px;
+	box-shadow: 6px 6px 25px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://avatars.mds.yandex.net/i?id=2a0000018104325f4fdb614c1a08b441063d-1437265-fast-images&n=13');
+    background-image: attr(bg-img url);
+	background-size: cover;
+	background-position: center;
+}
+
+
+.header-of-event {
+	align-self: start;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+
+.header-of-event .favourite {
+    margin-top: 24px;
+	justify-self: end;
+}
+
+.event-wrapper p {
+	font-family: 'Nunito', sans-serif;
+	font-size: 28px;
+	color: white;
+	letter-spacing: -2%;
+	font-weight: bold;
+	margin: 0;
+	align-self: start;
+}
+
+.header-of-event p {
+	font-family: 'Nunito', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: -2%;
+	color: white;
+	margin: 0;
+	padding: 18px 20px;
+	background-color: rgba(53, 20, 49, 0.8);
+	border-radius: 0 0 16px 16px;
+}
+
+.bottom-of-event {
+	display: flex;
+	margin-bottom: 26px;
+	justify-content: space-between;
+	align-self: flex-end;
+}
+
+.bottom-of-event p {
+	font-family: 'Nunito', sans-serif;
+	font-weight: normal;
+	letter-spacing: -2%;
+	color: white;
+	margin: 0;
+	background-color: rgba(119, 82, 83, 0.5);
+	border-radius: 16px;
+}
+
+.bottom-of-event .tag {
+	align-self: end;
+	font-size: 20px;
+	padding: 4px 16px;
+}
+
+.bottom-of-event .price {
+	font-size: 16px;
+	padding: 10px;
+	text-align: center;
+}

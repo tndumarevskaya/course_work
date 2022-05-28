@@ -1,16 +1,17 @@
 import "../styles/EventList.css";
-import {observer} from 'mobx-react-lite';
 import { useContext } from 'react';
 import { Context } from '../index';
+import EventCard from './EventCard';
+import { Row } from "react-bootstrap";
 
 const EventList = () => {
     const {event} = useContext(Context);
     return (
-        <Row className="d-flex">
+        <div className="events">
             {event.events.map(event =>
-
+                <EventCard key={event.id} event={event}></EventCard>
             )}
-        </Row>
+        </div>
     );
 }
 

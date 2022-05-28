@@ -5,3 +5,10 @@
 	font-family: 'Nunito', sans-serif !important;
 	font-weight: normal;
 }
+
+hr {
+	margin-top: 48px;
+	border: none;
+	border-top: 1px solid rgba(53, 20, 49, 0.2);
+	margin-bottom: 0;
+}

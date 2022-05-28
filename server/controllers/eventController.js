@@ -1,4 +1,3 @@
-const uuid = require('uuid');
 const {Event} = require('../models/models');
 const ApiError = require('../error/ApiError');
 const path = require('path');
@@ -6,12 +5,8 @@ const path = require('path');
 class eventController {
     async create(req, res, next) {
         try {
-            const {name, data, placeId, typeId, isFree, isOnline, price} = req.body;
-            const {img} = req.files;
-            let fileName = uuid.v4() + '.jpg';
-            img.mv(path.resolve(__dirname, "..", "images", fileName));
-
-            const event = await Event.create({name, data, placeId, typeId, isFree, isOnline, price, img: fileName});
+            const {name, data, placeId, typeId, isFree, isOnline, price, img} = req.body;
+            const event = await Event.create({name, data, placeId, typeId, isFree, isOnline, price, img});
 
             return res.json(event);
         } catch (e) {
