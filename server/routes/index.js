@@ -10,6 +10,6 @@ router.use('/user', userRouter)
 router.use('/event', eventRouter)
 router.use('/type', typeRouter)
 router.use('/place', placeRouter)
-router.use('/favourite', placeRouter)
+router.use('/favourite', favouriteRouter)
 
 module.exports = router

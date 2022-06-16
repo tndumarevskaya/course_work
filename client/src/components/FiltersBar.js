@@ -9,7 +9,7 @@ import {Context} from "../index"
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu';
 
 const FiltersBar = observer (() => {
-    const {event} = useContext(Context);
+    const {events} = useContext(Context);
 
     const CustomToggleForType = React.forwardRef(({children, onClick}, ref) => (
         <button className='type' ref={ref}  onClick={(e) => {
@@ -100,11 +100,11 @@ const FiltersBar = observer (() => {
                     </Dropdown.Toggle>
 
                     <DropdownMenu>
-                        {event.places.map(place =>
+                        {events.places.map(place =>
                             <Dropdown.Item 
                                 eventKey={place.id} 
                                 onClick={() => {
-                                    event.setSelectedType(place);
+                                    events.setSelectedType(place);
                                     setToggleForPlace(place)}}>
                                     {place.name}
                             </Dropdown.Item>
@@ -118,11 +118,11 @@ const FiltersBar = observer (() => {
                     </Dropdown.Toggle>
 
                     <DropdownMenu>
-                        {event.types.map(type =>
+                        {events.types.map(type =>
                             <Dropdown.Item 
                                 eventKey={type.id} 
                                 onClick={() => {
-                                    event.setSelectedType(type); 
+                                    events.setSelectedType(type); 
                                     setToggleForType(type);}}>
                                     {type.name}
                             </Dropdown.Item>
@@ -132,13 +132,11 @@ const FiltersBar = observer (() => {
 
                 <Dropdown>
                     <Dropdown.Toggle as={CustomToggleForFilters} id="dropdown-custom-components">
-                        Фильтры
+                        Цена
                     </Dropdown.Toggle>
 
                     <DropdownMenu>
-                        {event.types.map(type =>
-                            <Dropdown.Item eventKey={type.id} onClick={() => event.setSelectedType(type)}>{type.name}</Dropdown.Item>
-                        )}
+                        <Form.Range />
                     </DropdownMenu>
                 </Dropdown>
             </div>

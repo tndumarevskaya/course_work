@@ -1,3 +1,4 @@
+
 const {Sequelize} = require('sequelize');
 
 module.exports = new Sequelize(
@@ -10,3 +11,5 @@ module.exports = new Sequelize(
         port: process.env.DB_PORT
     }
 )
+
+

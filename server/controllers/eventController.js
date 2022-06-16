@@ -1,13 +1,13 @@
 const {Event} = require('../models/models');
 const ApiError = require('../error/ApiError');
 const path = require('path');
+const fs = require('fs');
 
 class eventController {
     async create(req, res, next) {
         try {
-            const {name, data, placeId, typeId, isFree, isOnline, price, img} = req.body;
-            const event = await Event.create({name, data, placeId, typeId, isFree, isOnline, price, img});
-
+            const {name, data, type, price, img} = req.body;    
+            const event = await Event.create({name, data, type, price, img});
             return res.json(event);
         } catch (e) {
             next(ApiError.badRequest(e.message));   
@@ -27,7 +27,6 @@ class eventController {
         } else if (placeId && typeId) {
             events = await Event.findAll({where:{placeId, typeId}});    
         }
-
         return res.json(events);
     }
 

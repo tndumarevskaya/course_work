@@ -8,16 +8,13 @@ import { Context } from '../index';
 import { fetchTypes, fetchPlaces, fetchEvents} from '../http/eventAPI';
 
 const MainPage = observer (() => { 
-    const {event} = useContext(Context);
+    const {events} = useContext(Context);
 
     useEffect(() => {
-        fetchTypes().then(data => event.setTypes(data));
-        fetchPlaces().then(data => event.setPlaces(data));
-    }, [])
-
-    useEffect(() => {
-        fetchEvents().then(data => event.setEvents(data));
-    }, [])
+        fetchTypes().then(data => events.setTypes(data));
+        fetchPlaces().then(data => events.setPlaces(data));
+        fetchEvents().then(data => events.setEvents(data));
+    }, []);
 
     return (
         <div className='main'>

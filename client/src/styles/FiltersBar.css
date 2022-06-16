@@ -83,3 +83,7 @@
 .filters {
 	grid-area: filters;
 }
+
+.form-range {
+	form-range-track-bg: #FA8334 !important;
+}

@@ -8,7 +8,7 @@ const path = require('path');
 const SITE = "https://www.culture.ru/afisha/nizhnii-novgorod?page_num=1";
 const pages = 1;
 
-module.exports = async function () {
+(async function () {
     try {
         for (const page of arrayFromLength(pages)) {
             const url = `${SITE}${page}`;
@@ -25,10 +25,9 @@ module.exports = async function () {
                     code: slugify(title)
                 });
             })
-            console.log(events_data);
             await listItemHandler(events_data);
         }        
     } catch (e) {
         console.log(e);
     }
-}
+})()

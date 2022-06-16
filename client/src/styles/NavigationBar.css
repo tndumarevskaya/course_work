@@ -4,11 +4,25 @@
 	font-weight: normal;
 	display: grid;
 	justify-content: end;
-	grid-template-columns: 40px auto 100px;
+	grid-template-columns: auto auto auto 100px;
 	align-items: center;
 	grid-gap: 10px;
 	background-color: #351431;
     height: 80px;
+}
+
+.exit {
+	margin-right: 740px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid #FA8334;
+	border-radius: 10px;
+	padding: 6px;
+	padding-right: 10px;
+	color: #FA8334;
+	gap: 4px;
+	background: inherit;
 }
 
 .favourite, .account {
@@ -32,6 +46,9 @@
 	color: #FA8334;
 }
 
+.title:focus {
+	color: white;
+}
 svg {
 	fill: currentColor;
 	align-self: center;
@@ -39,8 +56,21 @@ svg {
     width: 24px;
 }
 
-.favourite:hover, .favourite-search:focus, .account:hover, .account:focus {
+.exit:hover {
+	background: inherit;
+	color: white;
+	border: solid 2px white;
+	box-shadow: none !important;
+}
+
+.favourite:hover, .account:hover {
 	background: #FA8334;
 	color: white;
+	box-shadow: none !important;
+}
+
+.account:focus, .favourite:focus, .exit:focus {
+	background:  rgba(250, 131, 52, 0.5);
+	color: #FA8334;
 	box-shadow: none !important;
 }
